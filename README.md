@@ -1,0 +1,2 @@
+This is all the project solutions for the Udemy course: 
+"The Art of Doing: Code 40 Challenging Python Programs Today!"
