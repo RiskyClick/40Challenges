@@ -5,8 +5,7 @@ x = datetime.datetime.now()
 
 
 def addToList(groceryList):
-    groceryList.append(str(input("Type the food you want to add to the Grocery
-                                  List: ")).title())
+    groceryList.append(str(input("Type the food you want to add to the Grocery List: ")).title())
 
 
 def buyItem(groceryList):
