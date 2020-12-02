@@ -19,12 +19,3 @@ while len(fibArr) <= upTo:
         addTo = fibArr[pos] + fibArr[pos - 1]
         fibArr.append(addTo)
     pos += 1
-
-print("\nCool, here are the golden ratios i think")
-for i, el in enumerate(fibArr):
-    if i == 0:
-        pass
-    else:
-        print(el / fibArr[i - 1])
-
-print("\nSee it aproches a number phi")
