@@ -1,11 +1,25 @@
+import time
+
+
 print("Prime number thing")
 primes = []
 
-def primeHunter()
+
+def primeHunter(start, number):
+    maybe = 0
+    while start < (number / 2 + 1):
+        if number % start == 0:
+            maybe += 1
+        if maybe > 1:
+            return False
+            break
+        start += 1
+    if maybe < 2:
+        return True
+
 
 while True:
-    start = 1
-    print("Enter a 1 to see if a number is prime")
+    print("\nEnter a 1 to see if a number is prime")
     print("Or enter a 2 to see all the prime numbers up to a given number")
     while True:
         try:
@@ -13,6 +27,8 @@ while True:
             if choice > 3 or choice < 1:
                 print("Invaild choice")
             else:
+                if choice == 3:
+                    exit()
                 number = int(input("\nWhat number: "))
                 if number < 1:
                     print("invalid choice")
@@ -22,31 +38,17 @@ while True:
             print("Invalid option")
 
     print()
+    start = 1
     if choice == 1:
-        maybe = 0
-        while start < (number / 2 + 1):
-            if number % start == 0:
-                maybe += 1
-            if maybe > 1:
-                print(str(number) + " NOT PRIME!\n")
-                break
-            start += 1
-        if maybe < 2:
-            print(str(number) + " PRIME!\n")
-    elif choice == 2:
-        maybe = 0
-        check = 1
-        while start <= number:
-            while check < int(start / 2):
-                maybe = 0
-                if start % check == 0:
-                    maybe += 1
-                if maybe > 1:
-                    continue
-                check += 1
-            if maybe < 1:
-                primes.append(start)
-            start += 1
-        print(primes)
+        print("PRIME!") if primeHunter(start, number) else print("NOT PRIME!")
     else:
-        exit()
+        begin = time.time()
+        for i in range(1, number + 1):
+            if primeHunter(start, i):
+                primes.append(i)
+        finish = time.time()
+        print("\nIt took " + str(finish - begin) + " To compleate")
+        if input("Press Enter to view the list of prime numbers") == '':
+            for i in primes:
+                print(i)
+        print()

@@ -1,5 +1,6 @@
 import math
 
+
 def getABC():
     while True:
         try:
@@ -28,12 +29,16 @@ for loop in range(0, loops):
     im = (b**2) - (4*a*c)
     if im < 0:
         first = (-1 * b) / (2*a)
-        x1 = "\tX1: " + str(first) + " + " + str(math.sqrt(im * -1) / (2*a)) + "i"
-        x2 = "\tX2: " + str(first) + " - " + str(math.sqrt(im * -1) / (2*a)) + "i"
+        x1 = "\tX1: " + str(first) + ' + '
+        '' + str(math.sqrt(im * -1) / (2*a)) + "i"
+        x2 = "\tX2: " + str(first) + ' - '
+        '' + str(math.sqrt(im * -1) / (2*a)) + "i"
         print(x1)
         print(x2)
     else:
-        xPos = "\tX1: " + str(((-1*b) + math.sqrt(((b**2) - (4*a*c)))) / (2*a)) + " + 0i"
-        xNeg = "\tX2: " + str(((-1*b) - math.sqrt(((b**2) - (4*a*c)))) / (2*a)) + " - 0i"
+        xPos = "\tX1: " + str(((-1*b) + math.sqrt(((b**2) - (4*a*c)))) / (2*a))
+        xPos += " + 0i"
+        xNeg = "\tX2: " + str(((-1*b) - math.sqrt(((b**2) - (4*a*c)))) / (2*a))
+        xNeg += " - 0i"
         print(xPos)
         print(xNeg)
