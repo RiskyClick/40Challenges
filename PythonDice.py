@@ -27,5 +27,5 @@ while True:
     for i in range(0, dice):
         total += roll(sides)
     print("The total value of the roll is: " + str(total))
-    if input("\nRoll again?") != 'y':
+    if input("\nRoll again? ") != 'y':
         exit()
